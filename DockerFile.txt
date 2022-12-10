@@ -1,0 +1,55 @@
+Using WSL2 (Window Subsystem Linux 2)
+
+Linux Command Explanation:
+1.1)link  directory to source file directory in linux system
+1.2)Secondly,we need to Check Source file inside the file directory
+2.1)Next,we have to execute docker run to create a container using an image, and inside the run docker command, we need to link container file via www/html to my current directory (source file link to server)
+2.2)After that,lets check container created with a docker ps
+3) With the container created, we need to proceed to the bash of container to execute some configuration
+4) Firstly,lets downloads and installs the updates for each outdated package and dependency by using apt-get update
+5) Other than that,we have to create directory for java sdk
+5.1) So,we can download java sdk using this code.
+6) Next,lets change to php directory
+6.1) we can install nano to change the configuration of php.ini-production
+6.2) after that , we can set upload temporary directory to var/www/html to set directory for the uploaded folder
+6.3) rename php.ini
+6.4) lastly,check the source file inside container
+
+Linux Command:
+
+1.1)
+cd /mnt/c/Users/quekm/Desktop/cat201-assignment1
+1.2)
+ls
+
+2.1)
+docker run -d -p 1111:80 --name cf-cat201 -v "$PWD":/var/www/html php:8.1-apache
+2.2)
+docker ps
+
+3)
+docker exec -it cf-cat201 /bin/bash
+
+4)
+apt-get update
+
+5)
+mkdir -p /usr/share/man/man1
+5.1)
+apt-get install default-jre default-jdk -y
+
+6)
+cd /usr/local/etc/php
+6.1)
+apt install nano
+6.2)
+nano php.ini-production
+-Ctrl+w --> upload_tmp_dir
+-upload_temp_dir = /var/www/html/folder
+6.3)
+-Ctrl+O -->save and rename the file to php.ini
+
+
+6.4)
+cd /var/www/html
+ls
