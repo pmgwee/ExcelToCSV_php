@@ -1,0 +1,230 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;500&display=swap');
+
+:root{
+
+    --navy-blue: #1A374F;
+    --teal: #25A5C1;
+    --light-blue: #25a4c179;
+    --blue-grey: #E0E9F0;
+
+    --dark-purple: #090C3B;
+    --purple: #7C5993;
+    --light-purple: #7c599385;
+    --purple-grey: #E5E8F7;
+
+    --white: #FFFFFF;
+    --disable-grey: #D8D8D8;
+    --background: #FAFBFB;
+
+    --transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1);
+    --jerk-transition: all 500ms cubic-bezier(0.77, 0.0, 0.175, 1);
+
+
+    --cardHeight: 400px;
+    --cardWidth: 300px;
+    --title-height: 20vh;
+
+}
+
+html{
+    scroll-behavior: smooth;
+    background-repeat: repeat;
+    width: 100%;
+    -ms-overflow-style: none;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    background-color: #183289;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 4.85rem;
+    letter-spacing: 8px;
+    opacity: 0.8;
+    color:#FAFBFB;
+}
+
+h3{
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 2.218rem;
+    letter-spacing: 2px;
+    color: #A6A6A6;
+    opacity: 0.8;
+}
+
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #FAFBFB;
+    opacity: 0.8;
+
+}
+
+button,input {
+    opacity: 0.8;
+    display: inline-block;
+    padding: 15px 30px!important;
+    background: var(--navy-blue);
+    color: var(--background);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.318rem!important;
+    font-family: 'Merriweather', serif!important;
+    font-weight: 300!important;
+    border-radius: 10px;
+
+}
+
+button:hover {
+    background: var(--teal);
+    transition: var(--transition);
+    color: var(--background);
+}
+
+button:disabled{
+    background-color:rgb(161, 161, 161);
+}
+
+button{
+    width: 16rem;
+    height: 3.5rem;
+}
+
+img {
+    transform: scale(1);
+    transition: var(--jerk-transition);
+
+}
+
+img:hover {
+    transform: scale(1.25);
+    transition: var(--jerk-transition);
+}
+
+
+
+.itemWrapper{
+    width: 100vw;
+    height: 100%;
+    padding: 40px 15% 0 15%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.Title{
+    text-align: center;
+}
+.uploadContainer{
+    margin: 3% 0 3% 0;
+}
+
+
+.Card{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 4% 0;
+    border-radius: 20px;
+    box-shadow: inset 0 0 25px #1A374F;
+}
+
+.Submit{
+    margin: 3% 0 3% 0;
+}
+
+@media screen and (max-width: 1260px) {
+    .Submit{
+        margin: 6% 0 6% 0;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .Submit{
+        margin: 10% 0 10% 0;
+    }
+
+}
+
+.descContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5%;
+    flex-wrap: wrap;
+    gap: 16%;
+}
+
+@media screen and (max-width: 960px) {
+    .descContainer{
+        margin-bottom: 10%;
+    }
+}
+
+.imgBox{
+    margin-bottom: 10%;
+}
+
+.underline-text-animation {
+    display: inline-block;
+    position: relative;
+
+}
+
+.underline-text-animation::after {
+    content: "";
+    background-color: #F8C33A;
+    position: absolute;
+    width: 70%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: -2px;
+    left: 15%;
+    transform-origin: bottom right;
+    transition: all 0.5s ease-in-out;
+}
+
+.underline-text-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
+
+
+
