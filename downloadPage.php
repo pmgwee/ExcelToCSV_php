@@ -74,12 +74,12 @@
             <div class="uploadContainer">
                 <div class="Card">
                     <img src="Public/downloadFile.png" alt="fileIcon" width="313" height="313">
-                    <a href = "downloadFile.php" >
+                    <a href = "/ExcelToCSV_php/downloadFile.php" >
                         <button type="button" >Download</button>
                     </a>
                 </div>
                 <div class="Submit">
-                    <a href="index.php"><button type="button" >Convert Again</button></a>
+                    <a href="/ExcelToCSV_php/index.php"><button type="button" >Convert Again</button></a>
                 </div>
             </div>
             <div class="descContainer">
